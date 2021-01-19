@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <Box borderBottomWidth='2px' shadow='0 0 10px 0 rgba(0,0,0, 0.035);'>
       <HStack justify='space-between' px={8} py={4} maxW='4xl' mx='auto'>
-        <Avatar size='sm' />
+        {/* <Avatar size='sm' /> */}
         <HStack>
           <NavLink href='/about' name='About' />
           <NavLink href='/blog' name='Blog' />
