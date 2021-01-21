@@ -6,12 +6,12 @@ import Pleading from '../animation/Pleading.json';
 
 const PleadingFace = () => {
   const [playbackRate, setPlaybackRate] = useState(1.1);
-  const [play] = useSound('./cartoon-7.mp3', {
+  const [play] = useSound('./cartoon-8.mp3', {
     playbackRate,
     volume: 0.1,
     sprite: {
       bounce: [0, 700],
-      yeah: [1000, 3590],
+      oh: [1000, 2000],
     },
   });
 
@@ -48,18 +48,18 @@ const PleadingFace = () => {
       <Flex justify='center' align='center' h='100vh'>
         {playbackRate > 3 ? (
           <Image
-            fontSize='9xl'
+            style={{ width: '400px', height: '600px' }}
             onClick={() => {
               setPlaybackRate(1);
-              play({ id: 'yeah' });
+              play({ id: 'oh' });
             }}
-            src='./yoshie.jpg'
+            src='./aooni-2.gif'
           />
         ) : (
           <Box
             as='button'
             outline='none'
-            style={{ width: '200px', height: '200px' }}
+            style={{ width: '400px', height: '400px' }}
             ref={animation}
             onClick={changeAnimationState}
           />
