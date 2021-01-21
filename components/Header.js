@@ -10,12 +10,14 @@ import {
   Text,
   Avatar,
   Box,
+  Link,
+  VStack,
 } from '@chakra-ui/react';
 import {
+  EmojiHappy,
   BookOpenOutline,
   BookmarkAltOutline,
   ChevronDown,
-  CogOutline,
 } from 'heroicons-react';
 import ThemeToggle from './ThemeToggle';
 
@@ -29,9 +31,13 @@ const Header = () => {
   };
 
   return (
-    <Box borderBottomWidth='2px' shadow='0 0 10px 0 rgba(0,0,0, 0.035);'>
+    <Box
+      borderBottomWidth='2px'
+      shadow='0 0 10px 0 rgba(0,0,0, 0.035);'
+      display={{ base: 'none', md: 'block' }}
+    >
       <HStack justify='space-between' px={8} py={4} maxW='4xl' mx='auto'>
-        {/* <Avatar size='sm' /> */}
+        <Avatar size='sm' />
         <HStack>
           <NavLink href='/about' name='About' />
           <NavLink href='/blog' name='Blog' />
@@ -41,18 +47,30 @@ const Header = () => {
               Actions
             </MenuButton>
             <MenuList>
-              <MenuItem>
-                <Icon as={BookOpenOutline}></Icon>
-                <Text>Books</Text>
-              </MenuItem>
-              <MenuItem>
-                <Icon as={BookmarkAltOutline}></Icon>
-                <Text>Bookmark</Text>
-              </MenuItem>
-              <MenuItem>
-                <Icon as={CogOutline} />
-                <Text>Tools</Text>
-              </MenuItem>
+              <Link href='/books'>
+                <MenuItem>
+                  <HStack>
+                    <Icon as={BookOpenOutline}></Icon>
+                    <Text>Books</Text>
+                  </HStack>
+                </MenuItem>
+              </Link>
+              <Link href='/bookmark'>
+                <MenuItem>
+                  <HStack>
+                    <Icon as={BookmarkAltOutline}></Icon>
+                    <Text>Bookmark</Text>
+                  </HStack>
+                </MenuItem>
+              </Link>
+              <NextLink href='/pleading'>
+                <MenuItem>
+                  <HStack>
+                    <Icon as={EmojiHappy} />
+                    <Text>PleadingFace</Text>
+                  </HStack>
+                </MenuItem>
+              </NextLink>
             </MenuList>
           </Menu>
         </HStack>

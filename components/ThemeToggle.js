@@ -24,7 +24,11 @@ const ThemeToggle = () => {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      animationData: colorMode === 'light' ? SunData : MoonData,
+      animationData:
+        //I'm not sure but colorMode doesn't work here...
+        localStorage.getItem('chakra-ui-color-mode') === 'dark'
+          ? MoonData
+          : SunData,
     });
   }, []);
 
